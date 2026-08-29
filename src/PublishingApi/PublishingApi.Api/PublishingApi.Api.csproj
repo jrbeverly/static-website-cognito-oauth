@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="PublishingApi.Tests.Integration" />
+    <InternalsVisibleTo Include="PublishingApi.Tests.Unit" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Amazon.Lambda.AspNetCoreServer.Hosting" Version="1.7.*" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.*" />
+    <PackageReference Include="AWSSDK.DynamoDBv2" Version="3.7.*" />
+    <PackageReference Include="AWSSDK.S3" Version="3.7.*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PublishingApi.Domain\PublishingApi.Domain.csproj" />
+    <ProjectReference Include="..\PublishingApi.Infrastructure\PublishingApi.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>
